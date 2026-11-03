@@ -328,4 +328,5 @@ Use the project's localization accessor for every user-facing string (see `flutt
 2. If you added strings: follow `flutter-intl-strings`.
 3. Export new shared widgets from `lib/widgets/widgets.dart` (feature-local widgets are not exported).
 4. Run `flutter analyze` and fix every issue before reporting done.
-5. Tell the user which files were created, where the registration was added, and from which callsite the page is pushed.
+5. If the project has `patrol_test/` and the change is a full flow (or modifies one), follow `flutter-patrol-flows` to create or update its flow test and run it on the dev flavor.
+6. Tell the user which files were created, where the registration was added, from which callsite the page is pushed, and the flow test result.

@@ -5,7 +5,7 @@ contexto en `united-platform/docs/decisions/0002-marketplace-plugins.md`.
 
 | Plugin | Versión | Mantenedor | Qué trae |
 |---|---|---|---|
-| [`pgi-flutter`](plugins/pgi-flutter) | 1.0.0 | Joel Anaya | Convenciones de las apps Flutter |
+| [`pgi-flutter`](plugins/pgi-flutter) | 1.1.0 | Joel Anaya | Convenciones de las apps Flutter |
 | [`pgi-cerebro`](plugins/pgi-cerebro) | 0.3.0 | BAP-Corporativo | Skills del repo cerebro de cada proyecto |
 | `pgi-api` | — | IT-BAP | Pendiente: skills `pgi-*` del backend |
 
@@ -20,12 +20,14 @@ contexto en `united-platform/docs/decisions/0002-marketplace-plugins.md`.
 | `flutter-build-release` | Generar APK / IPA por flavor (IPA solo en macOS) |
 | `figma-css-to-flutter` | Traducir CSS de Figma a widgets |
 | `figma-hu-to-flutter` | Implementar un flujo desde el HU de diseño + nodos de Figma, reutilizando widgets |
+| `flutter-patrol-flows` | Escribir y correr pruebas E2E por flujo con Patrol en simulador (login fijo, checkpoints, sesión por API) |
 
-Cada skill funciona sola. `figma-hu-to-flutter` es la única que orquesta a las demás:
+Cada skill funciona sola. `figma-hu-to-flutter` es la única que orquesta a las demás; al terminar un flujo, `figma-hu-to-flutter` y `flutter-feature-scaffold` crean o actualizan su prueba con `flutter-patrol-flows` si el proyecto ya tiene `patrol_test/`:
 
 | Pides | Se usa |
 |---|---|
-| Un flujo completo desde su HU / Figma | `figma-hu-to-flutter` → `flutter-feature-scaffold` + `flutter-api-endpoint` + `flutter-intl-strings` |
+| Un flujo completo desde su HU / Figma | `figma-hu-to-flutter` → `flutter-feature-scaffold` + `flutter-api-endpoint` + `flutter-intl-strings` + `flutter-patrol-flows` |
+| Probar un flujo en simulador | `flutter-patrol-flows` |
 | Solo una pantalla nueva sin diseño | `flutter-feature-scaffold` |
 | Solo integrar un endpoint o un mock | `flutter-api-endpoint` |
 | Solo textos | `flutter-intl-strings` |
