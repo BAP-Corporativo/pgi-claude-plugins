@@ -320,5 +320,6 @@ End with:
 ## Finish
 
 1. `flutter analyze` passes; run `intl_utils:generate` and build_runner if strings/DTOs changed.
-2. Start the report with `Skill aplicada: figma-hu-to-flutter`.
-3. Deliver the report from Step 7 and the open gaps.
+2. Flow test: if the project has `patrol_test/`, follow `flutter-patrol-flows` — create the flow's test (new flow) or update it (change to an existing flow) and run only that flow on the dev flavor. If there is no device or credentials, report it as pending.
+3. Start the report with `Skill aplicada: figma-hu-to-flutter`.
+4. Deliver the report from Step 7, the flow test result and the open gaps.
