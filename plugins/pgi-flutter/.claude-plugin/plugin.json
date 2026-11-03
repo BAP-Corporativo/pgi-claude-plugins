@@ -1,7 +1,7 @@
 {
   "name": "pgi-flutter",
-  "version": "1.0.0",
-  "description": "Convenciones compartidas de los proyectos Flutter de PGI: scaffold de features, endpoints/DTOs, localización intl, flavors, builds de release y traducción de Figma a Flutter.",
+  "version": "1.1.0",
+  "description": "Convenciones compartidas de los proyectos Flutter de PGI: scaffold de features, endpoints/DTOs, localización intl, flavors, builds de release, traducción de Figma a Flutter y pruebas E2E por flujo con Patrol.",
   "author": {
     "name": "Joel Anaya"
   }
