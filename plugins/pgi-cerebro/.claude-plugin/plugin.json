@@ -1,7 +1,7 @@
 {
   "name": "pgi-cerebro",
-  "version": "0.2.0",
-  "description": "Skills del cerebro de cada proyecto PGI (p. ej. united-platform): specs de requerimientos y bugs, y captura del conocimiento de los devs.",
+  "version": "0.3.0",
+  "description": "Skills del cerebro de cada proyecto PGI (p. ej. united-platform): specs de requerimientos y bugs, implementación de issues aprobados y captura del conocimiento de los devs.",
   "author": {
     "name": "BAP-Corporativo"
   }
