@@ -108,7 +108,7 @@ Pantallas, flujo, textos (idiomas) y comportamiento con versiones viejas instala
 Si es Sí: requiere tests e2e en el backend y aprobación humana explícita del cálculo.
 
 ## Plan de pruebas
-Casos que QA (o `qa-plan`) debe cubrir: felices, borde, permisos, concurrencia si hay dinero.
+Tabla de la skill `qa-plan` (un caso por criterio, nivel, datos, resultado, prioridad).
 
 ## Riesgos
 Seguridad, datos existentes, migración, hallazgos abiertos relacionados.
