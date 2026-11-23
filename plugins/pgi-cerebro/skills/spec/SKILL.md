@@ -24,6 +24,32 @@ El resultado es un issue en el repo cerebro con el spec en el cuerpo, label `spe
   - Un número de issue → `gh issue view <n> --repo <cerebro> --comments`.
   - Texto libre → es un requerimiento nuevo; crearás el issue al final.
 - Clasifica: **requerimiento** (rama `feat/`) o **bug** (rama `fix/`).
+- Si el issue tiene label `hu` (lo creó `importar-hu`), sigue además **1b**.
+
+## 1b. Issues de HU de producto
+
+El documento de la épica (UX/UI) es la fuente de verdad funcional. **No reescribas** la historia,
+los criterios, los copies ni las reglas: el spec agrega lo técnico.
+
+- Lee la sección de la HU en la copia del repo (`docs/producto/<plataforma>/EP-NN-*.md`, ruta en
+  el issue) y, del índice (`docs/producto/indice.md`), solo las reglas `R-xx`, decisiones y temas
+  `TT` que la HU cita. No abras Drive ni Figma: si la copia no está, pide correr `importar-hu`.
+- **Criterios de aceptación** del spec: lista los IDs de la HU (`CA1.2.1` … `CA1.2.8`) sin
+  copiarlos, y agrega solo criterios técnicos nuevos con ID `CT-n` (permisos, compatibilidad,
+  concurrencia, dinero).
+- **Contrato de backend**: si la tabla "Datos que se envían al backend" de la HU está vacía,
+  propón el contrato en una sección `## Contrato de backend propuesto`, con el mismo formato que
+  la HU: `Acción | Endpoint | Formato y validación | Respuestas y códigos de error | Estado`
+  (Estado = "Propuesto"). Reusa endpoints existentes (busca en `contracts/api-endpoints.md` y en
+  el código) antes de proponer uno nuevo; respeta la respuesta estándar `{ detail, content }` y
+  la regla de no romper la App publicada.
+- **Origen "Existente"**: ubica la pantalla y el endpoint actuales en el código y di qué cambia
+  respecto a lo que ya hay.
+- Si el documento contradice `docs/domain/`, el código o una regla del cerebro, no elijas: va a
+  **Preguntas abiertas** indicando a quién (UX/UI, negocio o backend).
+- Una HU con label `hu-v1` queda en `spec` con esta nota al final: "Para pasar a V1.1: backend
+  aprueba el contrato propuesto, UX/UI lo copia al documento de la épica y se vuelve a correr
+  `importar-hu`." El orquestador no implementa HU en V1.
 
 ## 2. Contexto (lee poco y dirigido)
 

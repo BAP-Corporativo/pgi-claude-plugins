@@ -24,6 +24,11 @@ que un dev pueda revisar en minutos. **Nunca mergeas**: el merge lo hace una per
 - Debe tener `ready` y un spec con las secciones de la skill `spec` (Criterios de aceptación,
   Alcance por repo, Dinero, Plan de pruebas, Rama). Si falta algo o hay **Preguntas abiertas**
   sin responder, comenta qué falta, pon `necesita-info`, quita `ready` y termina.
+- **HU de producto** (label `hu`): solo se implementa si tiene `hu-v1.1`. Si tiene `hu-v1`,
+  comenta "La HU está en V1: falta el contrato de backend aprobado en el documento de la épica",
+  quita `ready` y termina. Lee la sección de la HU en `docs/producto/…` (ruta en el issue): sus
+  criterios `CA…`, copies oficiales, estados por frame, reglas `RN…` y la tabla de backend son
+  obligatorios; los copies se usan **exactos**.
 - Pon `en-progreso`. Si `Dinero` es Sí, pon también `dinero`.
 
 ## 2. Plan
@@ -50,6 +55,10 @@ que un dev pueda revisar en minutos. **Nunca mergeas**: el merge lo hace una per
    - App: `flutter analyze` y `flutter test` de lo que tocaste.
    - Si una prueba falla y no la puedes arreglar en 3 intentos, sigue con PR en **draft** y
      explica el fallo.
+   - **Trazabilidad**: cada prueba que cubre un criterio lleva su ID en el nombre
+     (`it('CA1.2.8 muestra error de credenciales', …)`, `CT-2 …`). Todo criterio de la HU o del
+     spec que toque este repo debe tener prueba o una razón escrita de por qué no (p. ej. solo
+     visual: se valida en QA con el frame de Figma).
 5. Commits en Conventional Commits, en español, con `Refs <org>/<cerebro>#<n>`.
 6. Push de la rama y PR hacia la rama de integración:
    `gh pr create --repo <org>/<repo> --base <integración> --head <rama> --body-file <archivo>`.
@@ -60,6 +69,9 @@ que un dev pueda revisar en minutos. **Nunca mergeas**: el merge lo hace una per
    ## Cambio
    ## Pruebas
    Comandos corridos y resultado.
+   ## Criterios cubiertos
+   | ID | Prueba | Estado |
+   (uno por criterio CA/CT que toca este repo; "QA manual" con el link al frame si no tiene prueba)
    ## Dinero
    No aplica | Requiere aprobación humana del cálculo (regla 5).
    ## Riesgos
