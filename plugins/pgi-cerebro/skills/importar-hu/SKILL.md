@@ -50,6 +50,10 @@ Por cada HU determina su **madurez**:
   "Con backend V1.1".
 - `hu-v1` (solo producto): la tabla de endpoints está vacía o dice "Pendiente de backend".
   El documento lo dice explícito: no está lista para desarrollo.
+- **Excepción:** si el issue ya tiene `contrato-aprobado`, el contrato se aprobó en GitHub
+  (vive en el spec del issue) y la HU se queda en `hu-v1.1` aunque la tabla del documento siga
+  vacía. Si la tabla del documento trae datos distintos al contrato aprobado, comenta la
+  diferencia en el issue y no cambies labels.
 
 ## 4. Issues (uno por HU)
 
@@ -77,8 +81,10 @@ Busca si ya existe: `gh issue list --repo <cerebro> --state all --search "[HU-NN
   extra si no existen.
 - **Issue existente**: si el contenido cambió, reemplaza el cuerpo y deja un comentario
   "Actualizada desde el documento (versión X): <qué cambió en 1–3 líneas>". Si pasó de `hu-v1`
-  a `hu-v1.1`, cambia el label. Nunca quites `ready`, `en-progreso` ni `en-revision`; si una HU
-  en progreso cambió, avísalo en el reporte.
+  a `hu-v1.1`, cambia el label. Nunca quites `ready`, `en-progreso`, `en-revision` ni
+  `contrato-aprobado`; si una HU en progreso cambió, avísalo en el reporte. Pon `triage` solo si
+  cambió algo funcional (historia, criterios, copies, reglas, estados); un cambio que solo copia
+  el contrato ya aprobado no lo necesita.
 - Si un label no existe, no lo crees: avisa (los crea `orq-labels`).
 
 ## 5. Commit y reporte
