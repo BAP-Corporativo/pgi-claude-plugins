@@ -48,17 +48,11 @@ que un dev pueda revisar en minutos. **Nunca mergeas**: el merge lo hace una per
 2. Cambio mínimo, con el estilo del archivo (nombres, idioma, finales de línea). No reformatees
    ni toques código ajeno al issue.
 3. Base de datos: sigue la skill de migraciones del repo (en UNITED, `migracion-bd`).
-4. Pruebas, según el `CLAUDE.md` del repo:
-   - Backend: agrega pruebas unitarias o e2e del caso; corre solo los archivos afectados.
-     Si toca dinero, **e2e obligatorio**.
-   - BackOffice: lint.
-   - App: `flutter analyze` y `flutter test` de lo que tocaste.
-   - Si una prueba falla y no la puedes arreglar en 3 intentos, sigue con PR en **draft** y
-     explica el fallo.
-   - **Trazabilidad**: cada prueba que cubre un criterio lleva su ID en el nombre
-     (`it('CA1.2.8 muestra error de credenciales', …)`, `CT-2 …`). Todo criterio de la HU o del
-     spec que toque este repo debe tener prueba o una razón escrita de por qué no (p. ej. solo
-     visual: se valida en QA con el frame de Figma).
+4. Pruebas: sigue la skill `qa-e2e` con el **Plan de pruebas** del issue (si no hay, corre antes
+   `qa-plan`). Cada prueba lleva el ID del criterio; si toca dinero, **e2e obligatorio**.
+   BackOffice: lint y los casos quedan como QA manual. App: `flutter analyze` y `flutter test` de
+   lo que tocaste. Si una prueba falla y no la puedes arreglar en 3 intentos, PR en **draft** con
+   la causa. El CI del repo vuelve a correr todo en el PR.
 5. Commits en Conventional Commits, en español, con `Refs <org>/<cerebro>#<n>`.
 6. Push de la rama y PR hacia la rama de integración:
    `gh pr create --repo <org>/<repo> --base <integración> --head <rama> --body-file <archivo>`.
