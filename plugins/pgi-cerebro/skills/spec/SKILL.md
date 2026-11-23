@@ -47,9 +47,12 @@ los criterios, los copies ni las reglas: el spec agrega lo técnico.
   respecto a lo que ya hay.
 - Si el documento contradice `docs/domain/`, el código o una regla del cerebro, no elijas: va a
   **Preguntas abiertas** indicando a quién (UX/UI, negocio o backend).
-- Una HU con label `hu-v1` queda en `spec` con esta nota al final: "Para pasar a V1.1: backend
-  aprueba el contrato propuesto, UX/UI lo copia al documento de la épica y se vuelve a correr
-  `importar-hu`." El orquestador no implementa HU en V1.
+- Una HU con label `hu-v1` queda en `spec` con esta nota al final: "Para pasar a V1.1: revisa el
+  contrato propuesto (ajústalo con `@claude …` si hace falta) y pon `contrato-aprobado`." El
+  orquestador no implementa HU en V1.
+- Si el issue ya tiene `contrato-aprobado`, **no cambies el contrato** al rehacer el spec: copia
+  la sección del spec anterior tal cual. Si un cambio de la HU obliga a cambiarlo, escríbelo
+  aparte en **Preguntas abiertas** y avisa que hay que volver a aprobarlo.
 
 ## 2. Contexto (lee poco y dirigido)
 

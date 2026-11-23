@@ -25,10 +25,11 @@ que un dev pueda revisar en minutos. **Nunca mergeas**: el merge lo hace una per
   Alcance por repo, Dinero, Plan de pruebas, Rama). Si falta algo o hay **Preguntas abiertas**
   sin responder, comenta qué falta, pon `necesita-info`, quita `ready` y termina.
 - **HU de producto** (label `hu`): solo se implementa si tiene `hu-v1.1`. Si tiene `hu-v1`,
-  comenta "La HU está en V1: falta el contrato de backend aprobado en el documento de la épica",
-  quita `ready` y termina. Lee la sección de la HU en `docs/producto/…` (ruta en el issue): sus
-  criterios `CA…`, copies oficiales, estados por frame, reglas `RN…` y la tabla de backend son
-  obligatorios; los copies se usan **exactos**.
+  comenta "La HU está en V1: falta aprobar el contrato de backend (`contrato-aprobado`)", quita
+  `ready` y termina. Lee la sección de la HU en `docs/producto/…` (ruta en el issue): sus
+  criterios `CA…`, copies oficiales, estados por frame y reglas `RN…` son obligatorios; los
+  copies se usan **exactos**. El contrato de backend es la tabla del documento o, si el issue
+  tiene `contrato-aprobado`, la sección *Contrato de backend propuesto* del último spec.
 - Pon `en-progreso`. Si `Dinero` es Sí, pon también `dinero`.
 
 ## 2. Plan

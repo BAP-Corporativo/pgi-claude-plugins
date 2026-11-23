@@ -6,7 +6,7 @@ contexto en `united-platform/docs/decisions/0002-marketplace-plugins.md`.
 | Plugin | Versión | Mantenedor | Qué trae |
 |---|---|---|---|
 | [`pgi-flutter`](plugins/pgi-flutter) | 1.1.0 | Joel Anaya | Convenciones de las apps Flutter |
-| [`pgi-cerebro`](plugins/pgi-cerebro) | 0.5.0 | BAP-Corporativo | Skills del repo cerebro de cada proyecto |
+| [`pgi-cerebro`](plugins/pgi-cerebro) | 0.6.0 | BAP-Corporativo | Skills del repo cerebro de cada proyecto |
 | `pgi-api` | — | IT-BAP | Pendiente: skills `pgi-*` del backend |
 
 ## `pgi-flutter`
